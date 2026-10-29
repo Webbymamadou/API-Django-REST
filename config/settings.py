@@ -65,16 +65,25 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Configuration de la base de données PostgreSQL avec les variables du .env
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('HOST', '127.0.0.1'),
-        'PORT': os.getenv('PORT', '5432'),
+if os.getenv("DB_ENGINE") == "sqlite":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": ":memory:",
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.getenv("POSTGRES_DB"),
+            "USER": os.getenv("POSTGRES_USER"),
+            "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+            "HOST": os.getenv("HOST", "127.0.0.1"),
+            "PORT": os.getenv("PORT", "5432"),
+        }
+    }
+
 
 
 # Password validation

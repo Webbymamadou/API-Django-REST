@@ -46,9 +46,6 @@ jobs:
       - name: Executer les tests Django
         env:
           SECRET_KEY: "cle-secrete-reservee-aux-tests"
-          POSTGRES_DB: "test_db"
-          POSTGRES_USER: "test_user"
-          POSTGRES_PASSWORD: "test_password"
-          DB_ENGINE: "django.db.backends.sqlite3"
-          DB_NAME: ":memory:"
+          DB_ENGINE: "sqlite"
         run: python manage.py test
+
