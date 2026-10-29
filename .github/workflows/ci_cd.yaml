@@ -41,8 +41,14 @@ jobs:
       - name: Verifier le code avec Ruff
         run: ruff check .
 
-      # 5. Exécuter les tests Django
+
+      # 5. Exécuter les tests Django avec SQLite
       - name: Executer les tests Django
         env:
-          SECRET_KEY: "cle-secrete-reservee-aux-tests-automatises"
+          SECRET_KEY: "cle-secrete-reservee-aux-tests"
+          POSTGRES_DB: "test_db"
+          POSTGRES_USER: "test_user"
+          POSTGRES_PASSWORD: "test_password"
+          DB_ENGINE: "django.db.backends.sqlite3"
+          DB_NAME: ":memory:"
         run: python manage.py test
