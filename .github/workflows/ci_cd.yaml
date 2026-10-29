@@ -12,7 +12,6 @@ on:
 # Autorise le pipeline à lire le dépôt
 permissions:
   contents: read
-
 jobs:
   tests:
     name: Qualite du code et tests Django
