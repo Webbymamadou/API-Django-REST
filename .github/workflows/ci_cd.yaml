@@ -43,4 +43,6 @@ jobs:
 
       # 5. Exécuter les tests Django
       - name: Executer les tests Django
+        env:
+          SECRET_KEY: "cle-secrete-reservee-aux-tests-automatises"
         run: python manage.py test
