@@ -10,3 +10,5 @@ __pycache__/
 # Fichiers IDE
 .vscode/
 .idea/
+
+/CHANGELOG.md
