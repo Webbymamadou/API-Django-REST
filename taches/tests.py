@@ -4,6 +4,7 @@ from rest_framework.test import APIClient
 
 from .models import Tache
 
+
 class TacheAPITestCase(TestCase):
 #Tests des endpoints de gestion des tâches en V1 et V2.
 

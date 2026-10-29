@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Modèle représentant une tâche dans la base de données
 class Tache(models.Model):
     # Liste des états possibles pour le suivi d'une tâche

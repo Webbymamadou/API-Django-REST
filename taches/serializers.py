@@ -1,5 +1,7 @@
 from rest_framework import serializers
+
 from .models import Tache
+
 
 # Serializer de la version 1 (v1) : retourne uniquement les champs de base d'une tâche
 class TacheSerializerV1(serializers.ModelSerializer):
