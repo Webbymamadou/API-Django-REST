@@ -80,7 +80,7 @@ else:
             "USER": os.getenv("POSTGRES_USER"),
             "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
             "HOST": os.getenv("HOST", "127.0.0.1"),
-            "PORT": os.getenv("PORT", "5432"),
+            "PORT": os.getenv("POSTGRES_PORT", "5432"),
         }
     }
 
