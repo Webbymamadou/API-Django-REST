@@ -15,7 +15,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # Activation du mode debug uniquement en développement
 DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'api-django-rest-yxi6.onrender.com',]
 
 # Application definition
 
